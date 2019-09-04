@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  4 SEP 2019 09:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.30)  4 SEP 2019 13:50
 entering extended mode
 **./root.tex
 (root.tex
@@ -96,7 +96,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 9).
 ** ATTENTION: Overriding IEEE standard margins (line 12).
-(root.aux)
+("C:\Program Files\MiKTeX 2.9\tex/latex/slashbox\slashbox.sty"
+slashbox style by K.Yasuoka, May 1993.
+\@slashboxa=\box28
+\@slashboxb=\box29
+\@slashboxc=\box30
+\@slashboxwd=\count92
+\@slashboxht=\count93
+\@slashsepl=\dimen113
+\@slashsepr=\dimen114
+) (root.aux)
 \openout1 = `root.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -136,6 +145,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--49
 \OT1/ptm/m/n/8 Head-ing-ton Rd, Ox-ford OX3 0BP, The United King-dom
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 74.
+
+Overfull \hbox (11.59366pt too wide) in paragraph at lines 83--91
+ [][] 
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -158,21 +174,27 @@ Overfull \vbox (336.63313pt too high) has occurred while \output is active []
 ]
 (root.aux) ) 
 Here is how much of TeX's memory you used:
- 839 strings out of 492946
- 13945 string characters out of 3135518
- 75718 words of memory out of 3000000
- 4800 multiletter control sequences out of 15000+200000
+ 863 strings out of 492946
+ 14341 string characters out of 3135518
+ 84718 words of memory out of 3000000
+ 4819 multiletter control sequences out of 15000+200000
  36097 words of font info for 72 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 26i,8n,19p,405b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 26i,14n,19p,405b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
-rw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (1 page, 58958 bytes).
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/latxfont/line10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucr
+r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on root.pdf (1 page, 109801 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

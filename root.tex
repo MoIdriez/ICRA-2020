@@ -10,7 +10,7 @@
                                                           % you want to use the \thanks command
 
 \overrideIEEEmargins                                      % Needed to meet printer requirements.
-
+\usepackage{slashbox}
 %In case you encounter the following error:
 %Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
 %Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
@@ -69,6 +69,41 @@ A framework for comparing mobile robot navigation
 \subsection{Experimental environment setup}
 \subsection{Evaluation methods}
 \section{Results}
+
+- How do we determine map complexity (needs a factor cross maps so that bigger maps are considered more complex)
+$$
+map_{complexity} = \frac{d_{eu}}{d_{worst}} *  \frac{map_{den}}{map_{size}} \eqno{(*)}
+$$
+- How does an algorithm perform on average 
+$$
+algorithm_{score} = (1 - \frac{d_{g}}{d_{eu}}) * \frac{d_{b} * c}{d_{eu}^2} \eqno{(*)}
+$$
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{ *{5}{|c}|} 
+		\hline
+		\backslashbox[10mm]{algorithm}{complexity} & 0-25\% & 25-50\% & 50-75\% & 75-100\% \\
+		\hline
+		random walk& 0 & 0 & 0 & 0 \\
+		potential field& 0 & 0 & 0 & 0 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+- How does an algorithm's performance translate to hybrid maps.
+
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{ *{8}{|c}|} 
+		\hline
+		\backslashbox[10mm]{algorithm}{type} & A & B & C & AB & AC & BC & ABC \\
+		\hline
+		random walk& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		random walk& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		\hline
+	\end{tabular}
+\end{table}
 \section{Discussion and conclusion}
 
 
