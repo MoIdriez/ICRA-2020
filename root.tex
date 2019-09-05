@@ -63,17 +63,82 @@ A framework for comparing mobile robot navigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
+Introduction to what exploration and navigation is.
+ 
+Where is it used. Why is it of importance.
+
+Introduce the key issue in the dynamic environments.
+
+Introduce main contribution of this paper to aid in solving the problem above
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+\begin{figure}[thpb]
+	\centering
+	\framebox{\parbox{3in}{This will contain a graphic showing all the different algorithm in a single environment. Each approach has it's own color. This serves to demonstrate in a simple way how the different algorithms behave in a simple and attracting way. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	}}
+	%\includegraphics[scale=1.0]{figurefile}
+	\caption{Different navigational algorithms path towards a goal}
+	\label{figurelabel}
+\end{figure}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
+
+
+
 \section{Related work and background}
+
+Present the main navigational algorithmic advancements justifying your choices too
+Present the comparison papers and how they have previously approached these comparisons
+
+
 \section{Methodology}
-\subsection{Navigational algorithms}
-\subsection{Experimental environment setup}
+\subsection{Experimental setup}
 \subsection{Evaluation methods}
+
+\section{Navigational algorithms}
+
+\subsection{random walk}
+\subsection{wall follower}
+\subsection{pheromone potential field}
+\subsection{A* algorithm}
+\subsection{Q learning}
+
+
 \section{Results}
+
+For each trial (Robot, Goal, Map) we have the following measurements;
+\begin{itemize}
+	\item \textit{$d_{g}$} distance to goal
+	\item \textit{$\epsilon$} success 
+	\item \textit{$d_{s}$} distance to starting point
+	\item $\sigma$ area explored
+	\item \textit{c} path cost
+	\item $\mu$ computational overhead
+	\item \textit{$m_{s}$} map size
+	\item \textit{$m_{d}$} map density
+\end{itemize}
 
 - How do we determine map complexity (needs a factor cross maps so that bigger maps are considered more complex)
 $$
 map_{complexity} = \frac{d_{eu}}{d_{worst}} *  \frac{map_{den}}{map_{size}} \eqno{(*)}
 $$
+
+$$
+map_{complexity} = \frac{d_{eu}}{d_{worst}} *  \frac{map_{den}}{map_{size}} \eqno{(*)}
+$$
+
 - How does an algorithm perform on average 
 $$
 algorithm_{score} = (1 - \frac{d_{g}}{d_{eu}}) * \frac{d_{b} * c}{d_{eu}^2} \eqno{(*)}
@@ -85,7 +150,10 @@ $$
 		\backslashbox[10mm]{algorithm}{complexity} & 0-25\% & 25-50\% & 50-75\% & 75-100\% \\
 		\hline
 		random walk& 0 & 0 & 0 & 0 \\
-		potential field& 0 & 0 & 0 & 0 \\
+		wall follower& 0 & 0 & 0 & 0 \\
+		pheromone potential field& 0 & 0 & 0 & 0 \\
+		A* algorithm& 0 & 0 & 0 & 0 \\
+		Q learning& 0 & 0 & 0 & 0 \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -97,10 +165,13 @@ $$
 	\centering
 	\begin{tabular}{ *{8}{|c}|} 
 		\hline
-		\backslashbox[10mm]{algorithm}{type} & A & B & C & AB & AC & BC & ABC \\
+		\backslashbox[10mm]{algorithm}{type} & O & D & H & OAD & OAH & DAH & ODH \\
 		\hline
 		random walk& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-		random walk& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		wall follower& 0 & 0 & 0 & 0 & 0 & 0 & 0  \\
+		pheromone potential field& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		A* algorithm& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		Q learning& 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
 		\hline
 	\end{tabular}
 \end{table}
