@@ -11,6 +11,8 @@
 
 \overrideIEEEmargins                                      % Needed to meet printer requirements.
 \usepackage{slashbox}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 %In case you encounter the following error:
 %Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
 %Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
@@ -63,21 +65,13 @@ A framework for comparing mobile robot navigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Introduction to what exploration and navigation is.
- 
-Where is it used. Why is it of importance.
+In order for mobile robot systems to perform any task in their environment they must first be able to navigate it. The navigation of an environment generally involves the goal location and the approach to get there while avoiding any hazards along the way. Robotic navigation has been extensively studied for decades and there is extensive work on the navigation of environments. These efforts can generally be divided into reactive, that make only instantaneous decisions, map-based involving e.g. grid, metric or topological representations, and learning-based approaches that use neural networks and/or reinforcement learning. 
 
-Introduce the key issue in the dynamic environments.
+Research in comparing these algorithms is mostly limited within a type of approach[][]. While there has been some research in exploring the limitations of navigational algorithms[][], a key issue that remains is that due to the fact that most approaches are developed in singular isolated environments there currently exists no method of comparing these algorithms. Furthermore, it's difficult to imagine fully autonomous exploration and navigation in a dynamic world where one approach would be continuously outperform. A more realistic method would be to dynamically switch between the different approaches in environments and conditions that they excel. 
+
+In this paper we are presenting a framework for comparing different navigation algorithms.
 
 Introduce main contribution of this paper to aid in solving the problem above
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
 
 \begin{figure}[thpb]
 	\centering
@@ -89,12 +83,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nu
 \end{figure}
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed venenatis nunc. Mauris at orci sodales, placerat massa in, gravida ligula. Duis nisi magna, fermentum sit amet sem ut, lacinia tincidunt mauris. Praesent et bibendum est. Ut faucibus orci lorem, rutrum laoreet orci posuere non. Donec in urna sed ante iaculis tempus vitae id justo. Maecenas id tincidunt neque. Ut vitae imperdiet augue.
-
 
 
 \section{Related work and background}
@@ -105,13 +93,74 @@ Present the comparison papers and how they have previously approached these comp
 
 \section{Methodology}
 \subsection{Experimental setup}
+The environments used to run these trials are on 3 different map sizes, obstacle types, and 3 complexities. The environments are in ${300}^2$, ${600}^2$, ${1200}^2$ arbitrary unit sizes surrounded by a wall to prevent the robot from leaving the area. The environment also has several added complexities in the form of obstacles, insurmountable rectangles of various sizes, hills, these can increase or decrease the cost of movement, and dungeons, which are a series of rooms and corridors simulating human like environments.
+
+Combining the different obstacles types we have obstacle, hill, and dungeon maps. Furthermore, there are also obstacle and hill, obstacle and dungeon, hill and dungeon, and obstacle hill and dungeon maps. Depending on the size of the map the map types are calculated as following:
+
+$$
+room_{count} = 15 * 3^{s-1} * c
+$$
+$$
+corridor_{length} = 40 * 2^{s-1}
+$$
+$$
+hills_{min} = (60 + (c-1)*30) * 4^{s-1} - 10*4^{s-1}
+$$
+$$
+hills_{max} = (60 + (c-1)*30) * 4^{s-1} + 10*4^{s-1}
+$$
+$$
+obstacle_{min} = (30 + (c-1)*30) * 4^{s-1} - 10*4^{s-1}
+$$
+$$
+obstacle_{max} = (30 + (c-1)*30) * 4^{s-1} + 10*4^{s-1}
+$$
+
+
+\subsection{environment type}
+
+
+3 different types of obstacles generating a total of 7 different types of maps, 3 different types
+
+3 sizes
+3 attributes
+
+
+
+
+
 \subsection{Evaluation methods}
 
 \section{Navigational algorithms}
 
+These algorithms represent the simplest
+implementation for each type of approach and were chosen for that reason.
+
 \subsection{random walk}
+Random walk, a reactive strategy based on a Brownian motion, is an algorithm where the robot moves randomly till it gets to it's target location. The robot at every step evaluates if it can step forwards. If it can it will step forward otherwise it will randomly turn left or right.
+
 \subsection{wall follower}
-\subsection{pheromone potential field}
+Wall Follower, a reactive strategy based of a Braitenberg vehicle, is an algorithm where the robot moves forward until it finds a wall. It continues then to follow the wall counter-clockwise until it sees the goal at which point it moves towards it. Each step, after initially finding the wall, it will turn right and step forward if there is no wall on it’s right, step forward if there is no collision ahead, or turn left if there is a collision ahead.
+
+\subsection{Pheromone potential field}
+Pheromone potential field, a simple map-based strategy, is an extension of normal potential fields where the robot moves depending on the attractive and repulsive forces acting on it. The attractive force originates from the goal, and the repulsive fields originate from the walls within range, and the pheromone trail it leaves behind.
+
+\subsection{A* algorithm}
+A*, a map-based strategy, is a widely used graph traversal algorithm that could be seen as an extension of Dijkstra's algorithm where the robot plans a path to the goal with it's current knowledge of the map. It proceeds to follow this plan until the point it can't (i.e. the plan suggest walking into a wall) at which points it plans a new path to the goal and sets out again.
+
+\begin{algorithm}
+	\caption{Random Walk strategy}
+	\begin{algorithmic} 
+		\WHILE{Robot Location != Goal Location}
+		\IF{Robot can step forward == true}
+		\STATE Robot step forward
+		\ELSE 
+		\STATE Orientation = Randomly left or right
+		\STATE Robot turn to Orientation
+		\ENDIF
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
 \subsection{A* algorithm}
 \subsection{Q learning}
 
